@@ -1,6 +1,6 @@
 {
   "name": "pixi-gradient-shaders",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "types": "dist/index.d.ts",
   "description": "Gradient Shaders for use with PixiJS",
   "repository": {
