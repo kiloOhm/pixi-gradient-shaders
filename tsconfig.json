@@ -1,0 +1,15 @@
+{
+  "exclude": ["dist", "node_modules"],
+  "include": ["src"],
+  "compilerOptions": {
+    "module": "ESNext",
+    "outDir": "dist",
+    "target": "ES2015",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "declaration": true,
+    "moduleResolution": "Node",
+    "lib": ["ES2019"]
+  }
+}

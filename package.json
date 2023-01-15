@@ -1,0 +1,38 @@
+{
+  "name": "pixi-gradient-shaders",
+  "version": "0.1.10",
+  "types": "dist/index.d.ts",
+  "description": "Gradient Shaders for use with PixiJS",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "author": "Lukas Wicke",
+  "keywords": [
+    "pixijs",
+    "pixi",
+    "shaders",
+    "gradient",
+    "pixi-gradient-shaders"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "latest"
+  }
+}
