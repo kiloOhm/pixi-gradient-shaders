@@ -5,7 +5,7 @@
   "description": "Gradient Shaders for use with PixiJS",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/kiloOhm/pixi-gradient-shaders"
   },
   "license": "MIT",
   "author": "Lukas Wicke",
