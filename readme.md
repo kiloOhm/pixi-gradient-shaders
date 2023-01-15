@@ -104,6 +104,32 @@ function conicGradient(options: {
 ## Example Usage
 
 ```js
+import { Application, Filter } from "pixi.js";
+import { SmoothGraphics as Graphics } from '@pixi/graphics-smooth';
+import { throttle } from "lodash";
+import { conicGradient } from "pixi-gradient-shaders";
+
+const container = document.getElementById("container") as HTMLElement;
+if(!container) throw new Error("No container found");
+const app = new Application({
+  autoDensity: true,
+  backgroundColor: 'transparent',
+  backgroundAlpha: 0,
+});
+const fitAppToScreen = throttle(() => {
+  app.renderer.resize(container.clientWidth, container.clientHeight);
+  app.resizeTo = container;
+  app.resize();
+}, 100, { leading: true, trailing: false });
+new ResizeObserver(() => {
+  fitAppToScreen();
+  draw();
+}).observe(container);
+fitAppToScreen();
+
+container.appendChild(app.view as HTMLCanvasElement);
+
+function draw() {
   const conical = new Graphics();
   conical.beginFill(0x000000, 1, true);
   conical.drawCircle(
@@ -123,4 +149,5 @@ function conicGradient(options: {
   const filter = new Filter(undefined, conicShader.fragmentShader, conicShader.uniforms);
   conical.filters = [filter];
   app.stage.addChild(conical);
+}
 ```
